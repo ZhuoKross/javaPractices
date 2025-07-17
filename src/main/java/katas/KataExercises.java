@@ -22,7 +22,7 @@ public class KataExercises {
             counter++;
 
         }
-
+        
 
         System.out.println(square);
 
