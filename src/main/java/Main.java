@@ -1,11 +1,9 @@
-import katas.PredictYourAgeKata;
+import katas.KataExercises;
 
 public class Main {
     public static void main(String[] args){
-        System.out.println("it works");
+        KataExercises kataClass = new KataExercises();
 
-        PredictYourAgeKata predictYourAge = new PredictYourAgeKata();
 
-        System.out.println(predictYourAge.predictAge(65,60,75,55,60,63,64,45));
     }
 }
