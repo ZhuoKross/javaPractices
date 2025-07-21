@@ -1,11 +1,11 @@
 package katas;
 
-public class vehiculo {
+public class Vehiculo {
     public String velocidad;
     public String marca;
     public String modelo;
 
-    public vehiculo(String velocidad, String marca, String modelo){
+    public Vehiculo(String velocidad, String marca, String modelo){
         this.velocidad = velocidad;
         this.marca = marca;
         this.modelo = modelo;
