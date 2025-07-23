@@ -14,6 +14,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("org.dhatim:fastexcel-reader:0.18.4")
     implementation("org.dhatim:fastexcel:0.18.4")
+    implementation("org.apache.poi:poi:5.4.0")
+    implementation("org.apache.poi:poi-ooxml:5.2.5")
 }
 
 tasks.test {

@@ -1,14 +1,20 @@
 import CoreJavaExercises.OOP.Calculadora;
 import Excel_Implementation.ReadFile;
+import Excel_Implementation.WriteFile;
 import katas.Carro;
 import katas.KataExercises;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         KataExercises kataClass = new KataExercises();
 
         //ReadFile reader = new ReadFile();
         //reader.readExcel();
+
+        WriteFile writer = new WriteFile();
+        writer.writeFile();
 
         // CLASSES EXAMPLES
 //        String velocidad = "20km/h";
