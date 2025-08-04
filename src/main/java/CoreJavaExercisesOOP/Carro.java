@@ -1,4 +1,4 @@
-package katas;
+package CoreJavaExercisesOOP;
 
 public class Carro extends Vehiculo {
     private int numPuertas;
@@ -15,5 +15,8 @@ public class Carro extends Vehiculo {
     @Override
     public void acelerar(){
         System.out.println("Acelerando a " + velocidad);
+        Vehiculo v = new Vehiculo("100km/h", "mazda", "2001");
     }
+
+
 }

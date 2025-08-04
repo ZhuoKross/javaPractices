@@ -1,4 +1,4 @@
-package katas;
+package CoreJavaExercisesOOP;
 
 public abstract class Vehiculo {
     public String velocidad;
@@ -21,6 +21,14 @@ public abstract class Vehiculo {
 
     public void cambiarMarcha(){
         System.out.println("Cambiando de marcha...");
+    }
+
+    private void cambiarX (){
+        System.out.println("ejemplo");
+    }
+
+    protected void cambiarY (){
+        System.out.println("ejemplo");
     }
 }
 

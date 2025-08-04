@@ -1,4 +1,4 @@
-package CoreJavaExercises.OOP;
+package CoreJavaExercisesOOP;
 
 public class Calculadora {
 
