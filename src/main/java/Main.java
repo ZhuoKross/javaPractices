@@ -1,10 +1,12 @@
-import CoreJavaExercises.OOP.Calculadora;
-import Excel_Implementation.ReadFile;
+import CoreJavaExercisesOOP.Carro;
+import CoreJavaExercisesOOP.ListOperations;
+import CoreJavaExercisesOOP.Moto;
 import Excel_Implementation.WriteFile;
-import katas.Carro;
 import katas.KataExercises;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -17,17 +19,27 @@ public class Main {
         writer.writeFile();
 
         // CLASSES EXAMPLES
-//        String velocidad = "20km/h";
-//        String marca = "Wolkwaven";
-//        String modelo = "titan 2001";
-//        int numeroPuertas = 4;
-//
-//        Carro Wolkswaven = new Carro(velocidad, marca, modelo, numeroPuertas);
-//
-//        Wolkswaven.verNumPuertas();
-//        Wolkswaven.acelerar(); // method overrided
-//        Wolkswaven.cambiarMarcha();
-//        Wolkswaven.frenar();
+        String velocidad = "20km/h";
+        String marca = "Wolkwaven";
+        String modelo = "titan 2001";
+        int numeroPuertas = 4;
+
+        Carro Volkswaven = new Carro(velocidad, marca, modelo, numeroPuertas);
+
+        Volkswaven.verNumPuertas();
+        Volkswaven.acelerar(); // method overrided
+        Volkswaven.cambiarMarcha();
+        Volkswaven.frenar();
+
+
+        String velocidadMoto = "50km/h";
+        String marcaMoto = "Honda";
+        String modeloMoto = "NX 190";
+        String tipoFreno = "delantero";
+
+        Moto HondaMoto = new Moto(marcaMoto, modeloMoto, velocidadMoto,tipoFreno);
+
+        HondaMoto.frenar();
 
 
         // Overload Example
@@ -42,6 +54,20 @@ public class Main {
 //        System.out.println("El area de un triangulo es: " + areaTriangulo);
 //        System.out.println("El area de un cuadrado es: " + areaCuadrado);
 
+
+        //OPERATIONS WITH LIST
+        ListOperations operations = new ListOperations();
+        List<String> listExample = new ArrayList<>(List.of("itemA", "itemB", "itemC", "itemD"));
+        List<String> listExample02 = new ArrayList<>(List.of("itemE", "itemF", "itemG"));
+
+        String cadena = "hola".concat("mundo");
+
+        operations.campareList(listExample, listExample02);
+        operations.iterateList(listExample);
+        operations.deleteItem(listExample, 0);
+        operations.replaceItem(listExample, 2, "itemReplaced");
+        operations.returnNumOfItems(listExample);
+        operations.exitsElement(listExample02, "item4");
 
     }
 }
