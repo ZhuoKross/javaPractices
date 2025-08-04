@@ -1,6 +1,6 @@
 package katas;
 
-public class Vehiculo {
+public abstract class Vehiculo {
     public String velocidad;
     public String marca;
     public String modelo;
