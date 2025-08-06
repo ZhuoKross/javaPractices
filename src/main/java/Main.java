@@ -1,3 +1,4 @@
+import CoreJavaExercisesOOP.Biblioteca.*;
 import CoreJavaExercisesOOP.Carro;
 import CoreJavaExercisesOOP.ListOperations;
 import CoreJavaExercisesOOP.Moto;
@@ -5,41 +6,44 @@ import Excel_Implementation.WriteFile;
 import katas.KataExercises;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        KataExercises kataClass = new KataExercises();
+        //KataExercises kataClass = new KataExercises();
 
         //ReadFile reader = new ReadFile();
         //reader.readExcel();
 
-        WriteFile writer = new WriteFile();
-        writer.writeFile();
+        //WriteFile writer = new WriteFile();
+        //writer.writeFile();
 
         // CLASSES EXAMPLES
-        String velocidad = "20km/h";
-        String marca = "Wolkwaven";
-        String modelo = "titan 2001";
-        int numeroPuertas = 4;
-
-        Carro Volkswaven = new Carro(velocidad, marca, modelo, numeroPuertas);
-
-        Volkswaven.verNumPuertas();
-        Volkswaven.acelerar(); // method overrided
-        Volkswaven.cambiarMarcha();
-        Volkswaven.frenar();
-
-
-        String velocidadMoto = "50km/h";
-        String marcaMoto = "Honda";
-        String modeloMoto = "NX 190";
-        String tipoFreno = "delantero";
-
-        Moto HondaMoto = new Moto(marcaMoto, modeloMoto, velocidadMoto,tipoFreno);
-
-        HondaMoto.frenar();
+//        String velocidad = "20km/h";
+//        String marca = "Wolkwaven";
+//        String modelo = "titan 2001";
+//        int numeroPuertas = 4;
+//
+//        Carro Volkswaven = new Carro(velocidad, marca, modelo, numeroPuertas);
+//
+//        Volkswaven.verNumPuertas();
+//        Volkswaven.acelerar(); // method overrided
+//        Volkswaven.cambiarMarcha();
+//        Volkswaven.frenar();
+//
+//
+//        String velocidadMoto = "50km/h";
+//        String marcaMoto = "Honda";
+//        String modeloMoto = "NX 190";
+//        String tipoFreno = "delantero";
+//
+//        Moto HondaMoto = new Moto(marcaMoto, modeloMoto, velocidadMoto,tipoFreno);
+//
+//        HondaMoto.frenar();
 
 
         // Overload Example
@@ -56,18 +60,34 @@ public class Main {
 
 
         //OPERATIONS WITH LIST
-        ListOperations operations = new ListOperations();
-        List<String> listExample = new ArrayList<>(List.of("itemA", "itemB", "itemC", "itemD"));
-        List<String> listExample02 = new ArrayList<>(List.of("itemE", "itemF", "itemG"));
+//        ListOperations operations = new ListOperations();
+//        List<String> listExample = new ArrayList<>(List.of("itemA", "itemB", "itemC", "itemD"));
+//        List<String> listExample02 = new ArrayList<>(List.of("itemE", "itemF", "itemG"));
+//
+//        String cadena = "hola".concat("mundo");
+//
+//        operations.campareList(listExample, listExample02);
+//        operations.iterateList(listExample);
+//        operations.deleteItem(listExample, 0);
+//        operations.replaceItem(listExample, 2, "itemReplaced");
+//        operations.returnNumOfItems(listExample);
+//        operations.exitsElement(listExample02, "item4");
 
-        String cadena = "hola".concat("mundo");
 
-        operations.campareList(listExample, listExample02);
-        operations.iterateList(listExample);
-        operations.deleteItem(listExample, 0);
-        operations.replaceItem(listExample, 2, "itemReplaced");
-        operations.returnNumOfItems(listExample);
-        operations.exitsElement(listExample02, "item4");
+        // EXERCISES OF OOP
+
+        Biblioteca biblioteca = new Biblioteca();
+        Estudiante estudiante01 = new Estudiante("Carlos", "Ingeniería", 2, "ingeniería civil");
+        Profesor profesor01 = new Profesor("Alberto", "Biología", "Botánica");
+        LocalDate fechaDevolucion = LocalDate.of(2025, Month.AUGUST, 15);
+        Libro elLoboEstepario = new Libro("El lobo Estepario", "Herman Hesse", LocalDate.of(1980, Month.AUGUST, 23), "Espiritualidad");
+        Prestamo prestamoLibro = new Prestamo(estudiante01, elLoboEstepario,fechaDevolucion);
+
+
+        biblioteca.agregarPrestamo(prestamoLibro);
+        biblioteca.verPrestamos();
+        biblioteca.devolverPrestamo(prestamoLibro);
+
 
     }
 }
