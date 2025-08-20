@@ -1,12 +1,13 @@
 package CoreJavaExercisesOOP.Hotel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HuespedRegular extends Huesped{
 
     private boolean primeraVez;
     double porcentajeDescuento;
-    List<String> listaBeneficios;
+    List<String> listaBeneficios = new ArrayList<>();
 
 
     public HuespedRegular(String nombre, int IdDocumento, boolean primeraVez, boolean esTitular) {
@@ -15,7 +16,7 @@ public class HuespedRegular extends Huesped{
         aplicarDescuento();
     }
 
-    public boolean esPriveraVezReservando (){
+    public boolean esPrimeraVezReservando (){
         return primeraVez;
     }
 

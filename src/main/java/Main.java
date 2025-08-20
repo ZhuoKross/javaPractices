@@ -1,9 +1,12 @@
 import CoreJavaExercisesOOP.Biblioteca.*;
 import CoreJavaExercisesOOP.Carro;
+import CoreJavaExercisesOOP.Hotel.*;
 import CoreJavaExercisesOOP.ListOperations;
 import CoreJavaExercisesOOP.Moto;
 import Excel_Implementation.WriteFile;
 import katas.KataExercises;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -13,6 +16,8 @@ import java.util.Date;
 import java.util.List;
 
 public class Main {
+    private static final Logger log = LogManager.getLogger(Main.class);
+
     public static void main(String[] args) throws IOException {
         //KataExercises kataClass = new KataExercises();
 
@@ -88,6 +93,18 @@ public class Main {
         biblioteca.verPrestamos();
         biblioteca.devolverPrestamo(prestamoLibro);
 
+
+        new Reserva(fechaDevolucion) {
+            void decirHola() {
+                System.out.println("Hola mundo");
+            }
+        }.decirHola();
+
+        LocalDate fechaDeTerminacionReserva = LocalDate.of(2025, Month.AUGUST,13);
+        HabitacionIndividual habitacionIndividual01 = new HabitacionIndividual(1, true, true, false, true, 2);
+        HuespedRegular huesped01 = new HuespedRegular("Carlos Garnica", 10334509, true, true);
+        Reserva reserva01 = new Reserva(fechaDeTerminacionReserva);
+        reserva01.<Huesped, Habitacion>calcularValorReserva(huesped01, habitacionIndividual01);
 
     }
 }
